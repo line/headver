@@ -2,7 +2,7 @@
 
 ![example](images/example.png)
 
-It means; the **3rd** public release, at around the **24th week of 2019**, from build **59**.
+It says; the **3rd** public release, at around the **24th week of 2019**, from build **59**.
 
 ## Introduction
 
@@ -25,9 +25,9 @@ Currently, this repository has Bash, Fastlane, and Gradle examples.
 ## Motivation
 
 There are so many questions came out when we use a SemVer style.
-- "Oops, we accidentally released without updating the version number!" 
+- "Oops, we accidentally released without updating the version!" 
 - "Why so many products are still having 1.x.y version? Do we have any chance to increase a major up?"
-- "Why `update to 1.0.3` commit should be in commit history? The version number is not a logic but just a package."
+- "Why `update to 1.0.3` commit should be in commit history? The version number is not a logic but just a package tag."
 - "User got a crash in version 1.4.3 but have no idea how old the version is. Is it outdated for months so?"
 - "What was the affected version and how long did we take to get fixed?"
 - "In this release, do we update a minor number or patch? We've discussed it all day long."
@@ -50,7 +50,7 @@ The HeadVer deeply thought these questions and defined rules to cover up all of 
 
 ### 1. {head}
 - The first part `{head}` is Zero-based manually modifiable number.
-- If you adopt HeadVer to a software that has v2.1.0, it is good to start with head number `3`.
+- For example, if you try to adopt HeadVer to a software that has v2.1.0, it is good to start with head number `3`.
 
 ### 2. {yearweek}
 - The second part `{yearweek}` is a combination of 2-digit for a year and 2-digit week number. ie, 34th week in year 2021 is 2134.
@@ -59,7 +59,7 @@ The HeadVer deeply thought these questions and defined rules to cover up all of 
 
 ### 3. {build}
 - The last part `{build}` is an automatically incremental number, and generally a build server stamps it.
-- If you cannot We strongly recommend to setup any auto-incremental counter system in front of any software releases.
+- We strongly recommend to setup a build server with auto-incremental counter system in front of any software releases.
 
 ## Tips
 - If your team is running a weekly sprint, middle number can be a sprint title as it raises per week. ie, `2104` can be a sprint for 4th week of 2021.
