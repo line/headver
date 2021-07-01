@@ -21,14 +21,14 @@ Currently, this repository has Bash, Fastlane, and Gradle examples.
 ## Motivation
 
 There are so many questions came out when we use a SemVer style.
-- "Oops, the version was accidentally released without updating the version number!" 
+- "Oops, we accidentally released without updating the version number!" 
 - "Why so many products are still having 1.x.y version? Do we have any chance to increase a major up?"
 - "Why `update to 1.0.3` commit should be in commit history? The version number is not a logic but just a package."
 - "User got a crash in version 1.4.3 but have no idea how old the version is. Is it outdated for months so?"
 - "What was the affected version and how long did we take to get fixed?"
 - "In this release, do we update a minor number or patch? We've spent a day and discussed a lot."
 
-The HeadVer deeply though these questions and defined rules to cover up all of them.
+The HeadVer deeply thought these questions and defined rules to cover up all of them.
 
 
 ## Benefits
