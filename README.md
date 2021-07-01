@@ -2,7 +2,7 @@
 
 ![example](images/example.png)
 
-It means; the third public release, at around the 24th week of 2019, from build 59.
+It means; the **3rd** public release, at around the **24th week of 2019**, from build **59**.
 
 ## Introduction
 
