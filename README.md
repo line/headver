@@ -26,7 +26,7 @@ There are so many questions came out when we use a SemVer style.
 - "Why `update to 1.0.3` commit should be in commit history? The version number is not a logic but just a package."
 - "User got a crash in version 1.4.3 but have no idea how old the version is. Is it outdated for months so?"
 - "What was the affected version and how long did we take to get fixed?"
-- "In this release, do we update a minor number or patch? We've spent a day and discussed a lot."
+- "In this release, do we update a minor number or patch? We've discussed it all day long."
 
 The HeadVer deeply thought these questions and defined rules to cover up all of them.
 
