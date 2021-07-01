@@ -2,6 +2,10 @@
 
 ![example](images/example.png)
 
+It means; the third public release, at around the 24th week of 2019, from build 59.
+
+## Introduction
+
 a version specification that has `{head}.{yearweek}.{build}` system.
 
 The name `HeadVer` stands for **"only head number is enough to maintain!"** because it only allows to set the first number manually, rest numbers are automatic. It simplifies `x.y.z` versioning and gurantees incremental version stamping on top of various versioning scripts introduced in this repository. HeadVer versioning system is battle-tested on the 30+ web service products.
