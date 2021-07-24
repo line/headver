@@ -16,7 +16,7 @@ The name `HeadVer` stands for **"only head number is enough to maintain!"** beca
 
 ## Code Examples
 
-Currently, this repository has Bash, Fastlane, and Gradle examples.
+Currently, this repository has Bash, Fastlane, and Gradle examples. You can apply it to a build server or a local machine.
 
 - Bash: [examples/bash.md](examples/bash.md)
 - Fastlane: [examples/fastlane.md](examples/fastlane.md)
