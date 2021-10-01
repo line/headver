@@ -63,3 +63,7 @@ new version().getYearWeek()
 // generates middle value based on Calendar data
 new version().getYearWeek(Calendar calendar)
 ```
+
+
+## Tip for Gradle users
+- "I'm familiar with [the way of '-SNAPSHOT' versioning](https://stackoverflow.com/a/45082572/361100), how can I achieve similar dev experience?" The recommendation is to use gradle dependency syntax `{head}.+`. It retains to get same head version at every build as like `-SNAPSHOT` does. When the `{head}` version is getting stabled, receivee developer should change the version to fixed number.
