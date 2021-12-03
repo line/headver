@@ -9,12 +9,20 @@ This document targets [PowerShell 7.1](https://docs.microsoft.com/en-us/powershe
 ## How to Use
 
 ```
-PS /path/to/workspace> &./headver.ps1 -Head 1 -Build 2 -Suffix "dev"
+PS /path/to/workspace> ./headver.ps1 -Head 1 -Build 2 -Suffix "dev"
 1.2146.2-dev
 ```
 ```
-PS /path/to/workspace> &./headver.ps1                                
+PS /path/to/workspace> ./headver.ps1
 0.2146.0
+```
+```
+PS /path/to/workspace> ./headver.ps1 -CurrentDate $(Get-Date -Date "2018-12-31")
+0.1901.0
+```
+```
+PS /path/to/workspace> ./headver.ps1 -CurrentDate $(Get-Date -Year 2005 -Month 1 -Day 1)
+0.0453.0
 ```
 
 ```ps1
@@ -34,15 +42,20 @@ param
     [System.DateTime]$CurrentDate = (Get-Date)
 )
 
-$culture = Get-Culture
-[Calendar]$calendar = $culture.Calendar
-[DateTimeFormatInfo]$format = $culture.DateTimeFormat
+[Int]$year = $CurrentDate.Year % 100
 
-$week = $calendar.GetWeekOfYear($CurrentDate, $format.CalendarWeekRule, $calendar.GetDayOfWeek($CurrentDate))
-$year = $CurrentDate.Year % 100
-$yearweek = $year * 100 + $week
+[DateTime]$start = [ISOWeek]::GetYearStart($CurrentDate.Year)
+if (($CurrentDate -lt $start)) {
+    $year = $year - 1
+}
+[DateTime]$end = [ISOWeek]::GetYearEnd($CurrentDate.Year)
+if (($CurrentDate -gt $end)) {
+    $year = $year + 1
+}
 
-[string]$version = [String]::Format("{0}.{1}.{2}", $Head, $yearweek, $Build)
+[Int]$week = [ISOWeek]::GetWeekOfYear($CurrentDate)
+[Int]$yearweek = $year * 100 + $week
+[String]$version = [String]::Format("{0}.{1:D4}.{2}", $Head, $yearweek, $Build)
 if ($Suffix.Length -gt 0) {
     $version = [String]::Format("{0}-{1}", $version, $Suffix)
 }

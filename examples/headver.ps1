@@ -25,6 +25,15 @@
 .EXAMPLE
     PS> headver.ps1 -Build 11 -Suffix "dev"
     0.2146.11-dev
+.EXAMPLE
+    PS> headver.ps1 -CurrentDate $(Get-Date -Year 2018 -Month 12 -Day 31)
+    0.1901.0
+.EXAMPLE
+    PS> headver.ps1 -CurrentDate $(Get-Date -Date "2007-12-31")
+    0.0801.0
+.EXAMPLE
+    PS> headver.ps1 -CurrentDate $(Get-Date -Date "2005-01-01")
+    0.0453.0
 #>
 using namespace System
 using namespace System.Globalization
@@ -36,15 +45,20 @@ param
     [System.DateTime]$CurrentDate = (Get-Date)
 )
 
-$culture = Get-Culture
-[Calendar]$calendar = $culture.Calendar
-[DateTimeFormatInfo]$format = $culture.DateTimeFormat
+[Int]$year = $CurrentDate.Year % 100
 
-$week = $calendar.GetWeekOfYear($CurrentDate, $format.CalendarWeekRule, $calendar.GetDayOfWeek($CurrentDate))
-$year = $CurrentDate.Year % 100
-$yearweek = $year * 100 + $week
+[DateTime]$start = [ISOWeek]::GetYearStart($CurrentDate.Year)
+if (($CurrentDate -lt $start)) {
+    $year = $year - 1
+}
+[DateTime]$end = [ISOWeek]::GetYearEnd($CurrentDate.Year)
+if (($CurrentDate -gt $end)) {
+    $year = $year + 1
+}
 
-[string]$version = [String]::Format("{0}.{1}.{2}", $Head, $yearweek, $Build)
+[Int]$week = [ISOWeek]::GetWeekOfYear($CurrentDate)
+[Int]$yearweek = $year * 100 + $week
+[String]$version = [String]::Format("{0}.{1:D4}.{2}", $Head, $yearweek, $Build)
 if ($Suffix.Length -gt 0) {
     $version = [String]::Format("{0}-{1}", $version, $Suffix)
 }
