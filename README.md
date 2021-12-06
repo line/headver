@@ -87,8 +87,8 @@ If you try to implement headver, `{yearweek}` requires special concerns as it sh
 |First day is Thursday| 2015-01-01 | 1501 |
 |First day is Friday| 2010-01-01 | 0953 |
 |Last day is Monday| 2018-12-31 | 1901 |
-|Last day is Tuesday| 2009-12-31 | 0953 |
-|Last day is Thursday| 2011-12-31 | 1152 |
+|Last day is Tuesday| 2019-12-31 | 2001 |
+|Last day is Thursday| 2009-12-31 | 0953 |
 |Last day is Saturday| 2011-12-31 | 1152 |
 |Last day is Sunday | 2017-12-31 | 1752 |
 |First day of 2015 for total 53 weeks| 2015-01-01 | 1501 |
