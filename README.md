@@ -71,3 +71,27 @@ The HeadVer deeply thought these questions and defined some rules to cover up al
 1. Can we use `-prerelease` for a version? Yes. But practically, we recommend not to use `-prerelease`. It is good to update `{head}` instead. HeadVer leads to increase `{head}` actively and frequently.
 1. Can we use `+meta` for a version? Yes, it is perfectly fine.
 1. Why not use `{yyyyMMdd}` but `{yearweek}`? Practically, week number precision is enough.
+
+## Validation
+
+If you try to implement headver, `{yearweek}` requires special concerns as it should follow ISO8601. Please validate your implementation with below table.
+
+| TestCase | Date | {yearweek} | 
+|----------|--------|------|
+|First day is Sunday| 2012-01-01 | 1152 |
+|First day is Monday| 2018-01-01 | 1801 |
+|Second day is Tuesday| 2018-01-02 | 1801 |
+|Seventh day is Sunday| 2018-01-07 | 1801 |
+|Sixth day is Saturday| 2018-01-06 | 1801 |
+|First day is Tuesday |2019-01-01 | 1901 |
+|First day is Thursday| 2015-01-01 | 1501 |
+|First day is Friday| 2010-01-01 | 0953 |
+|Last day is Monday| 2018-12-31 | 1901 |
+|Last day is Tuesday| 2009-12-31 | 0953 |
+|Last day is Thursday| 2011-12-31 | 1152 |
+|Last day is Saturday| 2011-12-31 | 1152 |
+|Last day is Sunday | 2017-12-31 | 1752 |
+|First day of 2015 for total 53 weeks| 2015-01-01 | 1501 |
+|Last day of 2015 for total 53 weeks| 2015-12-31 | 1553 |
+|First day of 2016 for total 52 weeks| 2016-01-01 | 1553 |
+|Last day of 2016 for total 52 weeks | 2016-12-31 | 1652 |
