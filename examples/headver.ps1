@@ -24,7 +24,7 @@
     0.2146.3
 .EXAMPLE
     PS> headver.ps1 -Build 11 -Suffix "dev"
-    0.2146.11-dev
+    0.2146.11+dev
 .EXAMPLE
     PS> headver.ps1 -CurrentDate $(Get-Date -Year 2018 -Month 12 -Day 31)
     0.1901.0
@@ -60,6 +60,6 @@ if (($CurrentDate -gt $end)) {
 [Int]$yearweek = $year * 100 + $week
 [String]$version = [String]::Format("{0}.{1:D4}.{2}", $Head, $yearweek, $Build)
 if ($Suffix.Length -gt 0) {
-    $version = [String]::Format("{0}-{1}", $version, $Suffix)
+    $version = [String]::Format("{0}+{1}", $version, $Suffix)
 }
 Write-Output $version
