@@ -10,7 +10,7 @@ This document targets [PowerShell 7.1](https://docs.microsoft.com/en-us/powershe
 
 ```
 PS /path/to/workspace> ./headver.ps1 -Head 1 -Build 2 -Suffix "dev"
-1.2146.2-dev
+1.2146.2+dev
 ```
 ```
 PS /path/to/workspace> ./headver.ps1
