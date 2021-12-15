@@ -57,7 +57,7 @@ if (($CurrentDate -gt $end)) {
 [Int]$yearweek = $year * 100 + $week
 [String]$version = [String]::Format("{0}.{1:D4}.{2}", $Head, $yearweek, $Build)
 if ($Suffix.Length -gt 0) {
-    $version = [String]::Format("{0}-{1}", $version, $Suffix)
+    $version = [String]::Format("{0}+{1}", $version, $Suffix)
 }
 Write-Output $version
 ```
