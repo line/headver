@@ -69,7 +69,7 @@ The HeadVer deeply thought these questions and defined some rules to cover up al
 - `{yearweek}` can be winded back to `0001` when year 2100 comes. When year 2100 comes, update `{head}` or use 4-digit for a year `210001`.
 
 ## FAQ
-1. Can we use `-prerelease` for a version? Yes. But practically, we recommend not to use `-prerelease`. It is good to update `{head}` instead. HeadVer leads to increase `{head}` actively and frequently.
+1. Can we use `-prerelease` for a version? Yes. But practically, we recommend not to use `-` suffix. It is better to update `{head}` instead. HeadVer leads to increase `{head}` actively and frequently.
 1. Can we use `+meta` for a version? Yes, it is perfectly fine.
 1. Why not use `{yyyyMMdd}` but `{yearweek}`? Practically, week number precision is enough.
 
