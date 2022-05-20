@@ -19,6 +19,7 @@ The name `HeadVer` stands for **"only head number is enough to maintain!"** beca
 Currently, this repository has Bash, Fastlane, and Gradle examples. You can apply it to a build server or a local machine.
 
 - Bash: [examples/bash.md](examples/bash.md)
+- Elixir: [examples/elixir.md](examples/elixir.md)
 - Fastlane: [examples/fastlane.md](examples/fastlane.md)
 - Gradle: [examples/gradle.md](examples/gradle.md)
 - PowerShell: [examples/powershell.md](examples/powershell.md), [examples/headver.ps1](examples/headver.ps1)
