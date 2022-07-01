@@ -53,6 +53,7 @@ The HeadVer deeply thought these questions and defined some rules to cover up al
 ### 1. {head}
 - The first part `{head}` is Zero-based manually modifiable number.
 - For example, if you try to adopt HeadVer to a software that has v2.1.0, it is good to start with head number `3`.
+- In notation, you can say `v3` or `v.3` for the head number `3`.
 
 ### 2. {yearweek}
 - The second part `{yearweek}` is a combination of 2-digit for a year and 2-digit week number. ie, 34th week in year 2021 is `2134`.
@@ -62,6 +63,7 @@ The HeadVer deeply thought these questions and defined some rules to cover up al
 ### 3. {build}
 - The last part `{build}` is an automatically incremental number, and generally a build server stamps it.
 - We strongly recommend to setup a build server with auto-incremental counter system in front of any software releases.
+- In notation, you can say `b59` or `b.59` for the build `59`.
 
 ## Tips
 - If your team is running a weekly sprint, a middle number can be a sprint title as it raises per week. ie, `2104` can be a sprint for 4th week of 2021.
