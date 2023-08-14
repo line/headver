@@ -31,6 +31,8 @@ Get-Help -Detailed ./headver.ps1
 
 ## Code
 
+Full PS code is in [headver.ps1](headver.ps1) file.
+
 ```ps1
 using namespace System
 using namespace System.Globalization
