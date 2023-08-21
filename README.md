@@ -23,6 +23,7 @@ Currently, this repository has Bash, Fastlane, and Gradle examples. You can appl
 - Fastlane: [examples/fastlane.md](examples/fastlane.md)
 - Gradle: [examples/gradle.md](examples/gradle.md)
 - PowerShell: [examples/powershell.md](examples/powershell.md), [examples/headver.ps1](examples/headver.ps1)
+- TypeScript: [examples/typescript.md](examples/typescript.md)
 
 ## Motivation
 
