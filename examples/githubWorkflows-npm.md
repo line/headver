@@ -1,10 +1,22 @@
-# Github Actions Workflow
+# Github Actions Workflow for Node Package Manager
 
 ## Introduction
 
-This is a HeadVer auto tagging workflows written in YAML that runs on Github Actions.
+This is a HeadVer auto tagging workflows written in YAML that runs on Github Actions. 
 
-The repository's workflow permissions must be `Read and write permissions`.
+### Prerequisite
+
+We assume that the 'head' value is read from `package.json` file as below format.
+
+```json
+{
+  "version": "0.1.0"
+}
+```
+
+A similar approach could be used to manage 'head' value located in any other file.
+
+### Variables
 
 - VERSION_PREFIX: `v`
 - VERSION_HEAD: the first digit of the version from `package.json` 
@@ -13,8 +25,10 @@ The repository's workflow permissions must be `Read and write permissions`.
 - VERSION_BUILD: A unique number for each execution of a specific workflow in the repository.
 
 ## How to Use
+The repository's Workflow permissions must be `Read and write permissions`. Please check your repository's Settings > Actions page.
+
 1. Make a `.yml` file in `.github/workflows`
-2. Write workflow code by referring to example code below `Tagging job`.
+2. Write workflow code by referring to example code below `Tagging job` section.
 3. Make sure that contents's permissions is `write` and `package.json` has version information.
 
 Github Actions documentation [here](https://docs.github.com/en/actions). 
